@@ -52,7 +52,6 @@ md3/
 | `assets/float-light.mp4`（188KB） | 亮色底板 | 底 surface `#fef7ff`；线稿 `#79747e`；色团 `#eaddff` / `#e8def8` / `#ffd8e4` |
 | `assets/float-dark.mp4`（204KB） | 暗色底板 | 底 surface `#141218`；线稿 `#cac4d0`；色团 `#4f378b` / `#4a4458` / `#633b48` |
 | `assets/bg-*.png` | 静态兜底（= 视频首帧） | 想关动效就把 `src` 指回它、`type` 改回 `image` |
-| `assets/src/*.svg` | 静态版可编辑源 | 单帧构图 |
 | `tools/float.html` | 动画渲染页 | `?theme=dark&t=12.3` 给出该时刻的精确画面 |
 
 **为什么是无缝的**：每个元素的位移都是周期 `T = 20s` 的整数倍正弦（x 用 1 倍频、y 用 2 倍频），`t = 20` 时状态与 `t = 0` 完全相同，首尾相接不跳。七个线框体各带不同相位、±12–26px 振幅，再叠 ±0.09rad 的慢自转与 ±3% 的呼吸；三枚色团动得更小更慢（远景），主色细环随色团走，形成很轻的视差。实测接缝帧差 `YAVG 0.167`，与普通相邻帧 `0.161` 同级——看不出拼接点。
@@ -71,6 +70,8 @@ ffmpeg -framerate 10 -i frames/dark-%03d.png -c:v libx264 -crf 30 \
 **宿主侧怎么放**：`backgroundMedia.type: "video"` 让皮肤中心用 `<video muted loop autoplay playsinline object-fit:cover>` 铺满底板层，自带合成层；每段只有 ~200KB、10fps 的近似静止画面，解码开销很低。底色仍是 surface 令牌原色，所以合成后画布还是精确的 `#fef7ff` / `#141218`。
 
 **不想要动效**：把 `skin.json` 两处 `src` 换回 `assets/bg-light.png` / `bg-dark.png` 并把 `type` 改成 `image`；或者把皮肤中心卡片的「遮蔽」滑杆拉满，直接压掉底板。
+
+（`tools/float-*.html` 是作者侧的逐帧渲染页，不随皮肤发布；包内只保留被 manifest 引用的媒体和静态兜底首帧。）
 
 ## 备注
 

@@ -52,7 +52,6 @@ The plate is a 1440×810 / 10fps / 20-second **seamless video loop** in which th
 | `assets/float-light.mp4` (188KB) | light plate | base surface `#fef7ff`; linework `#79747e`; fields `#eaddff` / `#e8def8` / `#ffd8e4` |
 | `assets/float-dark.mp4` (204KB) | dark plate | base surface `#141218`; linework `#cac4d0`; fields `#4f378b` / `#4a4458` / `#633b48` |
 | `assets/bg-*.png` | static fallback (= first frame) | point `src` back at it and set `type: image` to freeze the plate |
-| `assets/src/*.svg` | editable still source | single-frame composition |
 | `tools/float.html` | animation render page | `?theme=dark&t=12.3` yields that exact instant |
 
 **Why it loops seamlessly**: every displacement is a sinusoid with an integer number of cycles over `T = 20s` (1× on x, 2× on y), so `t = 20` reproduces `t = 0` exactly. The seven wireframes carry distinct phases and ±12–26px amplitudes plus a ±0.09rad slow yaw and ±3% breathing; the three tonal fields move less and slower (background), and the primary ring follows them for a light parallax. Measured seam difference `YAVG 0.167` against a normal frame step of `0.161` — the join is invisible.
@@ -71,6 +70,8 @@ ffmpeg -framerate 10 -i frames/dark-%03d.png -c:v libx264 -crf 30 \
 **Host side**: `type: "video"` makes the Skin Center fill the background layer with `<video muted loop autoplay playsinline object-fit:cover>` on its own compositor layer; each clip is ~200KB at 10fps of near-static content, so decode cost is negligible. The base colour is still the surface token, so the composited canvas stays the exact `#fef7ff` / `#141218`.
 
 **To stop the motion**: swap both `src` values back to `assets/bg-light.png` / `bg-dark.png` and set `type: image`; or push the Skin Center scrim slider to full, which buries the plate.
+
+(`tools/float-*.html` is the authoring-side frame renderer and is not shipped; the package keeps only the manifest-referenced media plus the still fallback frames.)
 
 ## Notes
 
