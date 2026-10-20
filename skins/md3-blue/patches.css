@@ -1,0 +1,147 @@
+/* ============================================================================
+ * Material 3 · 深蓝 — L3 自由 selector 补丁
+ * MD3 的招牌是「状态层」（state layer）与色调高程，不是阴影：
+ * hover / active 用前景色的 8%–12% 叠一层，形状走 4–28 的尺度。
+ * 全部为静态声明，无动画关键帧、无滤镜、无外部资源。
+ * ========================================================================== */
+
+/* ---- 正文：MD3 body-medium 的 0.25px 字距，读起来比默认松一口气 ---- */
+body {
+  letter-spacing: 0.15px;
+}
+
+/* ---- 状态层：hover 叠 8%，按下叠 12%（用渐变冒充单色叠加，不动布局） ---- */
+button,
+[role="button"],
+[role="menuitem"],
+[role="tab"],
+[role="option"] {
+  transition:
+    background-color 0.15s cubic-bezier(0.2, 0, 0, 1),
+    border-color 0.15s cubic-bezier(0.2, 0, 0, 1),
+    color 0.15s cubic-bezier(0.2, 0, 0, 1),
+    box-shadow 0.15s cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* 状态层必须叠「带 alpha 的颜色」。写成 currentColor 8% 是色标位置不是透明度，
+ * 那样会把整块填成实心前景色，文字直接糊没（md3 1.0.1 修）。
+ * 先在两个主题里写死 rgba 兜底，支持 color-mix 的浏览器再换成前景色 8% / 12%。 */
+button:hover,
+[role="button"]:hover,
+[role="menuitem"]:hover,
+[role="tab"]:hover,
+[role="option"]:hover {
+  background-image: linear-gradient(rgba(27, 27, 34, 0.08), rgba(27, 27, 34, 0.08));
+}
+
+button:active,
+[role="button"]:active,
+[role="menuitem"]:active,
+[role="tab"]:active,
+[role="option"]:active {
+  background-image: linear-gradient(rgba(27, 27, 34, 0.12), rgba(27, 27, 34, 0.12));
+}
+
+body[data-ds-dark-theme] button:hover,
+body[data-ds-dark-theme] [role="button"]:hover,
+body[data-ds-dark-theme] [role="menuitem"]:hover,
+body[data-ds-dark-theme] [role="tab"]:hover,
+body[data-ds-dark-theme] [role="option"]:hover {
+  background-image: linear-gradient(rgba(227, 225, 235, 0.08), rgba(227, 225, 235, 0.08));
+}
+
+body[data-ds-dark-theme] button:active,
+body[data-ds-dark-theme] [role="button"]:active,
+body[data-ds-dark-theme] [role="menuitem"]:active,
+body[data-ds-dark-theme] [role="tab"]:active,
+body[data-ds-dark-theme] [role="option"]:active {
+  background-image: linear-gradient(rgba(227, 225, 235, 0.12), rgba(227, 225, 235, 0.12));
+}
+
+@supports (background: color-mix(in srgb, red 8%, transparent)) {
+  button:hover,
+  [role="button"]:hover,
+  [role="menuitem"]:hover,
+  [role="tab"]:hover,
+  [role="option"]:hover {
+    background-image: linear-gradient(
+      color-mix(in srgb, currentColor 8%, transparent),
+      color-mix(in srgb, currentColor 8%, transparent)
+    );
+  }
+
+  button:active,
+  [role="button"]:active,
+  [role="menuitem"]:active,
+  [role="tab"]:active,
+  [role="option"]:active {
+    background-image: linear-gradient(
+      color-mix(in srgb, currentColor 12%, transparent),
+      color-mix(in srgb, currentColor 12%, transparent)
+    );
+  }
+}
+
+/* ---- 焦点指示器：MD3 focus indicator 就是 3px 主色描边 ---- */
+:focus-visible {
+  outline: 3px solid var(--dsw-focus-ring-color);
+  outline-offset: 2px;
+}
+
+/* ---- 链接：主色，下划线细一档 ---- */
+a {
+  color: var(--dsw-alias-link);
+  text-decoration-color: #4164f566;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  color: var(--dsw-alias-button-primary-hover);
+  text-decoration-color: currentColor;
+}
+
+body[data-ds-dark-theme] a {
+  text-decoration-color: #799dff66;
+}
+
+/* ---- 标题：MD3 用字重和层级说话，不画装饰线 ---- */
+h1,
+h2,
+h3 {
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 1.32em;
+  margin: 0.6em 0 0.3em;
+}
+
+h3 {
+  font-size: 1.12em;
+  margin: 0.5em 0 0.2em;
+}
+
+/* ---- 行内代码：secondary-container 底 + on-secondary-container 字 ---- */
+:not(pre) > code {
+  color: #292c44;
+}
+
+body[data-ds-dark-theme] :not(pre) > code {
+  color: #d7d9e4;
+}
+
+/* ---- 代码块：MD3 的 container-lowest 面，不描边，靠色调分层 ---- */
+pre {
+  border-radius: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button,
+  [role="button"],
+  [role="menuitem"],
+  [role="tab"],
+  [role="option"] {
+    transition: none;
+  }
+}
