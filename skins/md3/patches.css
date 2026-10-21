@@ -89,20 +89,6 @@ body[data-ds-dark-theme] [role="option"]:active {
 }
 
 /* ---- 链接：主色，下划线细一档 ---- */
-a {
-  color: var(--dsw-alias-link);
-  text-decoration-color: #6750a466;
-  text-underline-offset: 2px;
-}
-
-a:hover {
-  color: var(--dsw-alias-button-primary-hover);
-  text-decoration-color: currentColor;
-}
-
-body[data-ds-dark-theme] a {
-  text-decoration-color: #d0bcff66;
-}
 
 /* ---- 标题：MD3 用字重和层级说话，不画装饰线 ---- */
 h1,
@@ -145,3 +131,10 @@ pre {
     transition: none;
   }
 }
+/* ---- 为什么这里不写 `a { color }` ----
+ * 皮肤加载器会把每条选择器强制加上 html[data-dsh-skin="<id>"] 前缀，
+ * 于是 `a`（0,0,1）变成（0,1,1），压过组件自己的 .Xxx_primary（0,1,0）：
+ * 设置 → 账号与余额 里那颗填充按钮的 <a> 会被染成链接色，
+ * 白字变蓝底同色 → 按钮看起来是空的（md3 1.1.7 修）。
+ * 链接颜色交给 --dsw-alias-link 令牌，不再用元素选择器全局改色。
+ */
