@@ -26,11 +26,11 @@ body[data-ds-dark-theme] {
 :root {
   /* surface 容器层级（MD3 tonal surface） */
   --dsw-alias-bg-base: rgba(254, 247, 255, calc(0.24 + var(--dsw-skin-scrim, 0.5) * 0.56));
-  --dsw-alias-bg-layer-1: rgba(247, 242, 250, calc(0.6 + var(--dsw-skin-scrim, 0.5) * 0.3));
-  --dsw-alias-bg-layer-2: rgba(243, 237, 247, calc(0.68 + var(--dsw-skin-scrim, 0.5) * 0.26));
-  --dsw-alias-bg-layer-3: rgba(236, 230, 240, calc(0.76 + var(--dsw-skin-scrim, 0.5) * 0.2));
-  --dsw-alias-bg-layer-4: rgba(230, 224, 233, calc(0.84 + var(--dsw-skin-scrim, 0.5) * 0.14));
-  --dsw-alias-bg-overlay: rgba(254, 247, 255, calc(0.7 + var(--dsw-skin-scrim, 0.5) * 0.25));
+  --dsw-alias-bg-layer-1: rgba(247, 242, 250, calc(0.9 + var(--dsw-skin-scrim, 0.5) * 0.1));
+  --dsw-alias-bg-layer-2: rgba(243, 237, 247, calc(0.93 + var(--dsw-skin-scrim, 0.5) * 0.07));
+  --dsw-alias-bg-layer-3: rgba(236, 230, 240, calc(0.95 + var(--dsw-skin-scrim, 0.5) * 0.05));
+  --dsw-alias-bg-layer-4: rgba(230, 224, 233, calc(0.96 + var(--dsw-skin-scrim, 0.5) * 0.04));
+  --dsw-alias-bg-overlay: rgba(254, 247, 255, calc(0.86 + var(--dsw-skin-scrim, 0.5) * 0.14));
   --dsw-alias-bg-skeleton: #1d1b2012;
   --dsw-alias-bg-mask-1: #ece6f0e0;
   --dsw-alias-bg-mask-2: #ece6f059;
@@ -137,9 +137,9 @@ body[data-ds-dark-theme] {
   /* 面板角色 */
   --dsw-specific-bubble: #eaddff;
   --dsw-specific-bubble-highlight: #e8def8;
-  --dsw-specific-input-major: rgba(230, 224, 233, calc(0.58 + var(--dsw-skin-scrim, 0.5) * 0.3));
-  --dsw-specific-login-input: rgba(230, 224, 233, calc(0.7 + var(--dsw-skin-scrim, 0.5) * 0.26));
-  --dsw-specific-menu: #f3edf7f5;
+  --dsw-specific-input-major: rgba(230, 224, 233, calc(0.93 + var(--dsw-skin-scrim, 0.5) * 0.07));
+  --dsw-specific-login-input: rgba(230, 224, 233, calc(0.93 + var(--dsw-skin-scrim, 0.5) * 0.07));
+  --dsw-specific-menu: #f3edf7;
   --dsw-specific-selector: #ece6f0f2;
   --dsw-specific-sidebar-fill: rgba(243, 237, 247, calc(0.5 + var(--dsw-skin-scrim, 0.5) * 0.35));
   --dsw-specific-sidebar-nav-item-active: #e8def8;
@@ -186,11 +186,11 @@ body[data-ds-dark-theme] {
 body[data-ds-dark-theme] {
   /* surface 容器层级 */
   --dsw-alias-bg-base: rgba(20, 18, 24, calc(0.24 + var(--dsw-skin-scrim, 0.5) * 0.56));
-  --dsw-alias-bg-layer-1: rgba(29, 27, 32, calc(0.62 + var(--dsw-skin-scrim, 0.5) * 0.3));
-  --dsw-alias-bg-layer-2: rgba(33, 31, 38, calc(0.7 + var(--dsw-skin-scrim, 0.5) * 0.26));
-  --dsw-alias-bg-layer-3: rgba(43, 41, 48, calc(0.78 + var(--dsw-skin-scrim, 0.5) * 0.2));
-  --dsw-alias-bg-layer-4: rgba(54, 52, 59, calc(0.86 + var(--dsw-skin-scrim, 0.5) * 0.14));
-  --dsw-alias-bg-overlay: rgba(20, 18, 24, calc(0.72 + var(--dsw-skin-scrim, 0.5) * 0.25));
+  --dsw-alias-bg-layer-1: rgba(29, 27, 32, calc(0.9 + var(--dsw-skin-scrim, 0.5) * 0.1));
+  --dsw-alias-bg-layer-2: rgba(33, 31, 38, calc(0.93 + var(--dsw-skin-scrim, 0.5) * 0.07));
+  --dsw-alias-bg-layer-3: rgba(43, 41, 48, calc(0.95 + var(--dsw-skin-scrim, 0.5) * 0.05));
+  --dsw-alias-bg-layer-4: rgba(54, 52, 59, calc(0.96 + var(--dsw-skin-scrim, 0.5) * 0.04));
+  --dsw-alias-bg-overlay: rgba(20, 18, 24, calc(0.86 + var(--dsw-skin-scrim, 0.5) * 0.14));
   --dsw-alias-bg-skeleton: #e6e0e912;
   --dsw-alias-bg-mask-1: #0f0d13e0;
   --dsw-alias-bg-mask-2: #0f0d1359;
@@ -297,9 +297,9 @@ body[data-ds-dark-theme] {
   /* 面板角色 */
   --dsw-specific-bubble: #4f378b;
   --dsw-specific-bubble-highlight: #4a4458;
-  --dsw-specific-input-major: rgba(54, 52, 59, calc(0.6 + var(--dsw-skin-scrim, 0.5) * 0.3));
-  --dsw-specific-login-input: rgba(54, 52, 59, calc(0.66 + var(--dsw-skin-scrim, 0.5) * 0.28));
-  --dsw-specific-menu: #211f26f5;
+  --dsw-specific-input-major: rgba(54, 52, 59, calc(0.93 + var(--dsw-skin-scrim, 0.5) * 0.07));
+  --dsw-specific-login-input: rgba(54, 52, 59, calc(0.93 + var(--dsw-skin-scrim, 0.5) * 0.07));
+  --dsw-specific-menu: #211f26;
   --dsw-specific-selector: #2b2930f2;
   --dsw-specific-sidebar-fill: rgba(33, 31, 38, calc(0.52 + var(--dsw-skin-scrim, 0.5) * 0.35));
   --dsw-specific-sidebar-nav-item-active: #4a4458;
