@@ -4,7 +4,7 @@
   "id": "md3",
   "name": "物料三 · 紫调",
   "nameEn": "Material 3 · Violet (Baseline)",
-  "version": "1.1.9",
+  "version": "1.1.12",
   "author": "Little Code Sauce（自用皮肤）",
   "tagline": "MD3 Baseline 官方紫调 · surface 五级容器 + 状态层 · 线框几何缓慢漂浮",
   "description": "把 Material Design 3 的官方 Baseline 配色搬进 dsh（紫调原版；蓝色版本见 md3-blue）：亮暗两套都是官方 Baseline 调色板，primary / secondary / tertiary / error 各自带 container 与 on-* 前景，surface 走五级容器（lowest → highest），高程用色调分层而不是投影。形状按 MD3 尺度 4 / 8 / 12 / 16 / 28，hover 与按下用 8% / 12% 的前景状态层。全部静态色值，无背景图、无动画。",

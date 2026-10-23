@@ -33,10 +33,10 @@ body[data-ds-dark-theme] {
   --dsw-alias-bg-layer-4: rgba(227, 225, 235, calc(0.96 + var(--dsw-skin-scrim, 0.5) * 0.04));
   --dsw-alias-bg-overlay: rgba(252, 252, 255, calc(0.86 + var(--dsw-skin-scrim, 0.5) * 0.14));
   --dsw-alias-bg-skeleton: #1b1b2212;
-  --dsw-alias-bg-mask-1: #e8e7f1e0;
-  --dsw-alias-bg-mask-2: #e8e7f159;
-  --dsw-alias-bg-mask-3: #e8e7f1b3;
-  --dsw-alias-bg-mask-drop: #e3e1ebe6;
+  --dsw-alias-bg-mask-1: #0000003d;
+  --dsw-alias-bg-mask-2: #0000001f;
+  --dsw-alias-bg-mask-3: #00000059;
+  --dsw-alias-bg-mask-drop: #00000066;
   --dsw-alias-bg-mask-photo: #fcfcffe0;
   --dsw-alias-bg-module-platform: #eeedf7;
   --dsw-alias-bg-multi-select: #c7c3e3dd;
@@ -193,10 +193,10 @@ body[data-ds-dark-theme] {
   --dsw-alias-bg-layer-4: rgba(53, 52, 59, calc(0.96 + var(--dsw-skin-scrim, 0.5) * 0.04));
   --dsw-alias-bg-overlay: rgba(20, 18, 26, calc(0.86 + var(--dsw-skin-scrim, 0.5) * 0.14));
   --dsw-alias-bg-skeleton: #e3e1eb12;
-  --dsw-alias-bg-mask-1: #2a2930e0;
-  --dsw-alias-bg-mask-2: #2a293059;
-  --dsw-alias-bg-mask-3: #2a2930b3;
-  --dsw-alias-bg-mask-drop: #35343be6;
+  --dsw-alias-bg-mask-1: #00000080;
+  --dsw-alias-bg-mask-2: #00000040;
+  --dsw-alias-bg-mask-3: #000000a6;
+  --dsw-alias-bg-mask-drop: #000000b3;
   --dsw-alias-bg-mask-photo: #14121ae0;
   --dsw-alias-bg-module-platform: #201f26;
   --dsw-alias-bg-multi-select: #46445edd;
@@ -378,4 +378,21 @@ body::selection {
 body[data-ds-dark-theme]::selection {
   background: #799dff4d;
   color: #e3e1eb;
+}
+
+/* ---- 首帧底色：夜间黑、白天灰 ----
+ * 刷新时皮肤样式与底板还没就位，最先画出来的是 html 的底色。
+ * 用 prefers-color-scheme 按系统选一个"接近成品"的实色，避免闪白。
+ * 放在文件末尾：与 :root 同特异性时后者胜出。
+ */
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: #14121a;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    background-color: #e9e8ee;
+  }
 }

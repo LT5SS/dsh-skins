@@ -4,7 +4,7 @@
   "id": "md3-blue",
   "name": "物料三 · 深蓝",
   "nameEn": "Material 3 · Abyss Blue",
-  "version": "1.1.0",
+  "version": "1.1.3",
   "author": "Little Code Sauce（自用皮肤）",
   "tagline": "以 #4d6bfe 为种子的 MD3 色调体系 · 线框几何缓慢漂浮",
   "description": "以 #4d6bfe（DeepSeek 站点主色）为种子，按 Material Design 3 的色调体系展开成整套角色：亮色 primary #4164f5（对白字 4.81:1），暗色 primary #799dff（对深色画布 7.14:1），surface 五级容器带一点蓝紫底味，按钮、链接、侧栏激活条、用户气泡全是同一套主色容器。底板是 20 秒无缝循环的线框几何动画，全部颜色取自本皮肤。",

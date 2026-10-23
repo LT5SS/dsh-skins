@@ -153,3 +153,36 @@ button:disabled {
     opacity: 0.58;
   }
 }
+
+/* ---- 发送键：生成中变形为花瓣，回答结束自动变回 ----
+ * 依据：dsh-client-ui-conversation 里同一颗按钮用 aria-label 区分状态
+ *   发送消息 / Send message · 停止生成 / Stop generating · 排队发送 · 插话发送
+ * 只靠属性选择器，不依赖 CSS Modules 哈希类名。
+ */
+button[aria-label="发送消息"], button[aria-label="Send message"],
+button[aria-label="停止生成"], button[aria-label="Stop generating"],
+button[aria-label="排队发送"], button[aria-label="Queue message"],
+button[aria-label="插话发送"], button[aria-label="Steer message"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    border-radius 0.24s cubic-bezier(0.2, 0, 0, 1),
+    transform 0.24s cubic-bezier(0.2, 0, 0, 1),
+    background-color 0.2s linear;
+}
+
+/* 生成中：圆鼓成花瓣，轻微倾斜并收缩一点 */
+button[aria-label="停止生成"],
+button[aria-label="Stop generating"] {
+  border-radius: 58% 42% 47% 53% / 45% 58% 42% 55%;
+  transform: rotate(-10deg) scale(0.96);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  button[aria-label="发送消息"], button[aria-label="Send message"],
+  button[aria-label="停止生成"], button[aria-label="Stop generating"] {
+    transition: none;
+  }
+}
