@@ -138,3 +138,18 @@ pre {
  * 白字变蓝底同色 → 按钮看起来是空的（md3 1.1.7 修）。
  * 链接颜色交给 --dsw-alias-link 令牌，不再用元素选择器全局改色。
  */
+
+/* ---- 禁用态按钮不要糊成一团 ----
+ * 组件的 Button 原语写死了 `button:disabled { opacity: .4 }`，发送键（实心主按钮）
+ * 在空输入时整颗 40% 透明，圆底和箭头一起灰掉，看起来像坏图。
+ * 这里把禁用态抬到 58%：仍然明显弱于可用态，但圆底和图标都看得清。
+ */
+button:disabled {
+  opacity: 0.58;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button:disabled {
+    opacity: 0.58;
+  }
+}
