@@ -1,6 +1,6 @@
 # 物料三 · 紫调 (md3)
 
-给 dsh 写的 **Material Design 3** 皮肤，官方 Baseline 紫调原版（蓝色变体见 `md3-blue`）。亮暗两套都直接用 MD3 官方 **Baseline** 调色板，
+给 dsh 写的 **Material Design 3** 皮肤，官方 Baseline 紫调原版。亮暗两套都直接用 MD3 官方 **Baseline** 调色板，
 所有 `--dsw-*` 令牌按 MD3 颜色角色重映射，不做自创配色。
 
 ## 角色映射
@@ -21,7 +21,7 @@
 ## MD3 的三条规矩，这套皮肤怎么落
 
 1. **高程靠色调，不靠阴影** —— surface 五级容器铺出层次，抽屉、卡片、输入框各占一档。
-2. **状态层** —— hover 叠 8% 前景色、按下叠 12%（`patches.css` 里的 `linear-gradient(currentColor …)`）。
+2. **状态层** —— hover 叠 8% 前景色、按下叠 12%（`patches.css` 里的 `rgba()` 状态层，`color-mix` 可用时走等价写法）。
 3. **形状尺度** —— 圆角 4 / 8 / 12 / 16 / 28：小控件 4，卡片 12，气泡 20，浮层与输入条 28。
 
 ## 安装
@@ -40,7 +40,7 @@ md3/
 ├── skin.json       v2 清单（accent = #6750A4）
 ├── skin.css        MD3 角色 → dsh 令牌，亮暗两套
 ├── patches.css     状态层、3px 焦点指示器、标题字重、行内代码前景
-└── preview/        亮 / 暗两态预览
+└── preview/        亮 / 暗两态预览（真实宿主机截图，1910×973）
 ```
 
 ## 底板（backgroundMedia · 20 秒漂浮循环）
