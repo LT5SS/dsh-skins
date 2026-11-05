@@ -14,7 +14,7 @@
 | primary-container | `#eaddff` | `#4f378b` | 用户气泡 `specific-bubble` |
 | secondary-container | `#e8def8` | `#4a4458` | 侧栏激活项 / 行内代码 |
 | tertiary | `#7d5260` | `#efb8c8` | 代码关键字色（预览） |
-| error | `#b3261e` | `#f2b8b5` | `state-error-*` |
+| error | `#b3261e` | `#ffd6d2` | `state-error-*` |
 | outline / outline-variant | `#79747e` / `#cac4d0` | `#938f99` / `#49454f` | `border-l1…l4` |
 | inverse-surface | `#322f35` | `#e6e0e9` | tooltip / toast |
 
@@ -78,6 +78,6 @@ ffmpeg -framerate 10 -i frames/dark-%03d.png -c:v libx264 -crf 30 \
 - 1.1.0：底板改成 20 秒无缝循环视频（`backgroundMedia.type: video`），几何体缓慢漂浮；静态版仍留在 `assets/bg-*.png`。
 - 1.0.1：修掉 hover / 按下状态层把整行填成实心前景色的 bug（`currentColor 8%` 是渐变色标位置，不是透明度）；改为带 alpha 的颜色叠加，并在支持 `color-mix` 的浏览器上用前景色 8% / 12%。
 
-- 无 `hooks.mjs`、无背景图、无动画：全部静态色值，滚动与会话切换零额外开销。
+- 无 `hooks.mjs`：底板是预渲染的 20 秒循环，其余全部静态色值，滚动与会话切换零额外开销。
 - MD3 的字阶本来配 Roboto；字体归 dsh 的「字体设置」管，本皮肤不抢用户的选择。
 - 未重映射的 `--dsw-*` 由加载器按母色 `#6750a4` 衍生，官方新面板也保持紫色调。

@@ -14,7 +14,7 @@ every `--dsw-*` token is remapped onto MD3 colour roles, with no invented colour
 | primary-container | `#eaddff` | `#4f378b` | user bubble `specific-bubble` |
 | secondary-container | `#e8def8` | `#4a4458` | active nav item / inline code |
 | tertiary | `#7d5260` | `#efb8c8` | code keyword colour (preview) |
-| error | `#b3261e` | `#f2b8b5` | `state-error-*` |
+| error | `#b3261e` | `#ffd6d2` | `state-error-*` |
 | outline / outline-variant | `#79747e` / `#cac4d0` | `#938f99` / `#49454f` | `border-l1…l4` |
 | inverse-surface | `#322f35` | `#e6e0e9` | tooltip / toast |
 
@@ -78,6 +78,6 @@ ffmpeg -framerate 10 -i frames/dark-%03d.png -c:v libx264 -crf 30 \
 - 1.1.0: the plate is now a 20-second seamless video loop (`backgroundMedia.type: video`) with slowly drifting geometry; the still version remains in `assets/bg-*.png`.
 - 1.0.1: fixed the hover/press state layer painting the whole row in solid foreground (`currentColor 8%` is a gradient stop position, not an alpha); it now layers an alpha colour, and uses `color-mix` on foreground at 8% / 12% where supported.
 
-- No `hooks.mjs`, no background image, no animation: static colour values only, so scrolling and session switches cost nothing.
+- No `hooks.mjs`: the plate is a pre-rendered 20-second loop and every colour is a static value, so scrolling and session switches cost nothing.
 - MD3 typography wants Roboto; fonts belong to dsh's font settings, so this skin never overrides your choice.
 - Tokens not remapped are derived by the loader from the base colour `#6750a4`, keeping new official surfaces in the purple family.
