@@ -25,7 +25,7 @@ body[data-ds-dark-theme] {
  * ========================================================================== */
 :root {
   /* surface 容器层级（MD3 tonal surface） */
-  --dsw-alias-bg-base: rgba(254, 247, 255, calc(0.24 + var(--dsw-skin-scrim, 0.5) * 0.56));
+  --dsw-alias-bg-base: rgba(254, 247, 255, calc(0.62 + var(--dsw-skin-scrim, 0.5) * 0.42));
   --dsw-alias-bg-layer-1: rgba(247, 242, 250, calc(0.96 + var(--dsw-skin-scrim, 0.5) * 0.04));
   --dsw-alias-bg-layer-2: rgba(243, 237, 247, calc(0.97 + var(--dsw-skin-scrim, 0.5) * 0.03));
   --dsw-alias-bg-layer-3: rgba(236, 230, 240, calc(0.95 + var(--dsw-skin-scrim, 0.5) * 0.05));
@@ -185,7 +185,7 @@ body[data-ds-dark-theme] {
  * ========================================================================== */
 body[data-ds-dark-theme] {
   /* surface 容器层级 */
-  --dsw-alias-bg-base: rgba(20, 18, 24, calc(0.24 + var(--dsw-skin-scrim, 0.5) * 0.56));
+  --dsw-alias-bg-base: rgba(20, 18, 24, calc(0.62 + var(--dsw-skin-scrim, 0.5) * 0.42));
   --dsw-alias-bg-layer-1: rgba(29, 27, 32, calc(0.96 + var(--dsw-skin-scrim, 0.5) * 0.04));
   --dsw-alias-bg-layer-2: rgba(33, 31, 38, calc(0.97 + var(--dsw-skin-scrim, 0.5) * 0.03));
   --dsw-alias-bg-layer-3: rgba(43, 41, 48, calc(0.95 + var(--dsw-skin-scrim, 0.5) * 0.05));
