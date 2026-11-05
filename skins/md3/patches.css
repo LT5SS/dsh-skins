@@ -161,3 +161,18 @@ button:disabled {
 svg {
   vertical-align: middle;
 }
+
+/* ---- 输入区局部实色 ----
+ * 宿主在输入区上方叠了一层渐隐：
+ *   background: color-mix(in srgb, var(--dsw-alias-bg-base) 72%, transparent)
+ * 画布是半透明的，这层跟着半透明，正文就穿过输入框透上来了。
+ * 不去改宿主的选择器，只在输入区停靠容器里把画布令牌就地改成实色：
+ * 渐隐层当场变成不透明，画布其他区域的底板不受影响。
+ */
+[data-composer-dock] {
+  --dsw-alias-bg-base: #fcfcff;
+}
+
+body[data-ds-dark-theme] [data-composer-dock] {
+  --dsw-alias-bg-base: #14121a;
+}
