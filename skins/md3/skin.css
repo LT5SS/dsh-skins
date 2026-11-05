@@ -26,8 +26,8 @@ body[data-ds-dark-theme] {
 :root {
   /* surface 容器层级（MD3 tonal surface） */
   --dsw-alias-bg-base: rgba(254, 247, 255, calc(0.24 + var(--dsw-skin-scrim, 0.5) * 0.56));
-  --dsw-alias-bg-layer-1: rgba(247, 242, 250, calc(0.9 + var(--dsw-skin-scrim, 0.5) * 0.1));
-  --dsw-alias-bg-layer-2: rgba(243, 237, 247, calc(0.93 + var(--dsw-skin-scrim, 0.5) * 0.07));
+  --dsw-alias-bg-layer-1: rgba(247, 242, 250, calc(0.96 + var(--dsw-skin-scrim, 0.5) * 0.04));
+  --dsw-alias-bg-layer-2: rgba(243, 237, 247, calc(0.97 + var(--dsw-skin-scrim, 0.5) * 0.03));
   --dsw-alias-bg-layer-3: rgba(236, 230, 240, calc(0.95 + var(--dsw-skin-scrim, 0.5) * 0.05));
   --dsw-alias-bg-layer-4: rgba(230, 224, 233, calc(0.96 + var(--dsw-skin-scrim, 0.5) * 0.04));
   --dsw-alias-bg-overlay: rgba(254, 247, 255, calc(0.86 + var(--dsw-skin-scrim, 0.5) * 0.14));
@@ -137,10 +137,10 @@ body[data-ds-dark-theme] {
   /* 面板角色 */
   --dsw-specific-bubble: #eaddff;
   --dsw-specific-bubble-highlight: #e8def8;
-  --dsw-specific-input-major: rgba(230, 224, 233, calc(0.93 + var(--dsw-skin-scrim, 0.5) * 0.07));
+  --dsw-specific-input-major: rgba(230, 224, 233, calc(0.97 + var(--dsw-skin-scrim, 0.5) * 0.03));
   --dsw-specific-login-input: rgba(230, 224, 233, calc(0.93 + var(--dsw-skin-scrim, 0.5) * 0.07));
   --dsw-specific-menu: #f3edf7;
-  --dsw-specific-selector: #ece6f0f2;
+  --dsw-specific-selector: #ece6f0fc;
   --dsw-specific-sidebar-fill: rgba(243, 237, 247, calc(0.5 + var(--dsw-skin-scrim, 0.5) * 0.35));
   --dsw-specific-sidebar-nav-item-active: #e8def8;
   --dsw-specific-sidebar-nav-item-active-accent: #6750a4;
@@ -186,8 +186,8 @@ body[data-ds-dark-theme] {
 body[data-ds-dark-theme] {
   /* surface 容器层级 */
   --dsw-alias-bg-base: rgba(20, 18, 24, calc(0.24 + var(--dsw-skin-scrim, 0.5) * 0.56));
-  --dsw-alias-bg-layer-1: rgba(29, 27, 32, calc(0.9 + var(--dsw-skin-scrim, 0.5) * 0.1));
-  --dsw-alias-bg-layer-2: rgba(33, 31, 38, calc(0.93 + var(--dsw-skin-scrim, 0.5) * 0.07));
+  --dsw-alias-bg-layer-1: rgba(29, 27, 32, calc(0.96 + var(--dsw-skin-scrim, 0.5) * 0.04));
+  --dsw-alias-bg-layer-2: rgba(33, 31, 38, calc(0.97 + var(--dsw-skin-scrim, 0.5) * 0.03));
   --dsw-alias-bg-layer-3: rgba(43, 41, 48, calc(0.95 + var(--dsw-skin-scrim, 0.5) * 0.05));
   --dsw-alias-bg-layer-4: rgba(54, 52, 59, calc(0.96 + var(--dsw-skin-scrim, 0.5) * 0.04));
   --dsw-alias-bg-overlay: rgba(20, 18, 24, calc(0.86 + var(--dsw-skin-scrim, 0.5) * 0.14));
@@ -251,7 +251,7 @@ body[data-ds-dark-theme] {
   --dsw-alias-label-primary-foreground: #381e72;
   --dsw-alias-label-primary-inverted: #322f35;
   --dsw-alias-label-primary-bluish: #d0bcff;
-  --dsw-alias-label-error: #f2b8b5;
+  --dsw-alias-label-error: #ffd6d2;
   --dsw-alias-label-document-preview: #cac4d0;
   --dsw-alias-label-deep-diving: #d0bcff;
   --dsw-alias-label-deep-diving-shimmer: #eadcff;
@@ -278,8 +278,8 @@ body[data-ds-dark-theme] {
   --dsw-alias-state-business-primary: #d0bcff;
   --dsw-alias-state-business-tertiary: #4f378b;
   --dsw-alias-state-idle-primary: #938f99;
-  --dsw-alias-state-error-primary: #f2b8b5;
-  --dsw-alias-state-error-secondary: #f9dedc;
+  --dsw-alias-state-error-primary: #ffd6d2;
+  --dsw-alias-state-error-secondary: #ffe9e7;
   --dsw-alias-state-success-primary: #6dd58c;
   --dsw-alias-state-success-secondary: #8ae39f;
   --dsw-alias-state-success-tertiary: #17361f;
@@ -297,10 +297,10 @@ body[data-ds-dark-theme] {
   /* 面板角色 */
   --dsw-specific-bubble: #4f378b;
   --dsw-specific-bubble-highlight: #4a4458;
-  --dsw-specific-input-major: rgba(54, 52, 59, calc(0.93 + var(--dsw-skin-scrim, 0.5) * 0.07));
+  --dsw-specific-input-major: rgba(54, 52, 59, calc(0.97 + var(--dsw-skin-scrim, 0.5) * 0.03));
   --dsw-specific-login-input: rgba(54, 52, 59, calc(0.93 + var(--dsw-skin-scrim, 0.5) * 0.07));
   --dsw-specific-menu: #211f26;
-  --dsw-specific-selector: #2b2930f2;
+  --dsw-specific-selector: #2b2930fc;
   --dsw-specific-sidebar-fill: rgba(33, 31, 38, calc(0.52 + var(--dsw-skin-scrim, 0.5) * 0.35));
   --dsw-specific-sidebar-nav-item-active: #4a4458;
   --dsw-specific-sidebar-nav-item-active-accent: #d0bcff;
